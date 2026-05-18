@@ -1,0 +1,420 @@
+/* CHARTE GRAPHIQUE POP & ARCADE */
+:root {
+  --bg-color: #fceade;
+  --panel-bg: #ffffff;
+  --primary: #ff5964;
+  --secondary: #fee440;
+  --accent: #35a7ff;
+  --dark-border: #1a1a1a;
+  --text-main: #1a1a1a;
+  --neo-shadow: 6px 6px 0px #1a1a1a;
+  --neo-shadow-hover: 2px 2px 0px #1a1a1a;
+  --card-shadow: 4px 4px 0px #1a1a1a;
+}
+
+/* STRUCTURE GENERALE */
+body {
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-main);
+  letter-spacing: 0.5px;
+}
+
+.container {
+  width: 100%;
+  max-width: 650px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* FORMULAIRE DE CONFIGURATION */
+.setup-form {
+  background: var(--panel-bg);
+  padding: 40px 30px;
+  border: 4px solid var(--dark-border);
+  border-radius: 24px;
+  box-shadow: var(--neo-shadow);
+  text-align: center;
+}
+
+.setup-form h1 {
+  margin-top: 0;
+  margin-bottom: 35px;
+  color: var(--primary);
+  font-size: 3rem;
+  text-transform: uppercase;
+  -webkit-text-stroke: 2px var(--dark-border);
+  text-shadow: 4px 4px 0px var(--secondary);
+}
+
+.form-group {
+  margin-bottom: 25px;
+  text-align: left;
+  font-family: 'Arial Black', sans-serif;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 900;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 14px;
+  border: 3px solid var(--dark-border);
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: sans-serif;
+  font-weight: bold;
+  background-color: #fff;
+  box-sizing: border-box;
+  transition: transform 0.1s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  background-color: #fffdf0;
+  transform: scale(1.01);
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 16px;
+  border: 3px solid var(--dark-border);
+  border-radius: 16px;
+  font-size: 1.5rem;
+  font-family: 'Impact', sans-serif;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  background: var(--secondary);
+  cursor: pointer;
+  box-shadow: var(--neo-shadow);
+  transition: all 0.1s ease;
+  margin-top: 15px;
+}
+
+button[type="submit"]:hover {
+  background: #fff066;
+  transform: translate(2px, 2px);
+  box-shadow: var(--neo-shadow-hover);
+}
+
+button[type="submit"]:active {
+  transform: translate(6px, 6px);
+  box-shadow: none;
+}
+
+/* ZONE DE JEU (.game-area) */
+.game-area:not(.hidden) {
+  display: flex !important;
+  flex-direction: row;
+  gap: 30px;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  background: var(--panel-bg);
+  padding: 30px;
+  border: 4px solid var(--dark-border);
+  border-radius: 24px;
+  box-shadow: var(--neo-shadow);
+}
+
+.game-main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.game-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 180px;
+  background: #ffffff;
+  padding: 25px 20px;
+  border: 4px solid #1a1a1a;
+  border-radius: 20px;
+  box-shadow: 6px 6px 0px #1a1a1a;
+  box-sizing: border-box;
+}
+
+/* INDIFICATEURS SIDEBAR */
+.game-sidebar .timer-zone {
+  text-align: center;
+  font-family: 'Impact', sans-serif;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  background: #35a7ff;
+  color: white;
+  border: 3px solid #1a1a1a;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 3px 3px 0px #1a1a1a;
+}
+
+#chrono {
+  font-size: 2rem;
+  display: block;
+  color: #fee440;
+  margin-top: 5px;
+}
+
+.combo-zone {
+  text-align: center;
+  font-family: 'Impact', sans-serif;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  background: #ff9f1c;
+  color: white;
+  border: 3px solid #1a1a1a;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 3px 3px 0px #1a1a1a;
+  transition: transform 0.1s ease;
+}
+
+#combo-value {
+  font-size: 1.8rem;
+  display: block;
+  color: #fee440;
+}
+
+.combo-bump {
+  transform: scale(1.1);
+  background: #e63946 !important;
+}
+
+#level-zone {
+  text-align: center;
+  font-family: 'Impact', sans-serif;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  background: #fee440;
+  color: #1a1a1a;
+  border: 3px solid #1a1a1a;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 3px 3px 0px #1a1a1a;
+}
+
+#current-level {
+  font-size: 1.8rem;
+  display: block;
+  font-weight: bold;
+}
+
+/* BOUTONS ACTIONS DE JEU */
+#btn-joker {
+  width: 100%;
+  padding: 12px;
+  font-family: 'Impact', sans-serif;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  color: white;
+  background: #2ec4b6;
+  border: 3px solid #1a1a1a;
+  border-radius: 12px;
+  box-shadow: 3px 3px 0px #1a1a1a;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+#btn-joker:hover:not(:disabled) {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0px #1a1a1a;
+}
+
+#btn-joker:disabled {
+  background: #a0aec0;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+#btn-abandon {
+  width: 100%;
+  padding: 12px;
+  font-family: 'Impact', sans-serif;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  color: white;
+  background: #ff5964;
+  border: 3px solid #1a1a1a;
+  border-radius: 12px;
+  box-shadow: 3px 3px 0px #1a1a1a;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+#btn-abandon:hover {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0px #1a1a1a;
+}
+
+#btn-abandon:active {
+  transform: translate(3px, 3px);
+  box-shadow: none;
+}
+
+/* PLATEAU DE JEU & CARTES */
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 15px;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 600px;
+}
+
+.card {
+  aspect-ratio: 3 / 4;
+  background-color: #ffffff;
+  border: 3px solid #1a1a1a;
+  border-radius: 16px;
+  box-shadow: 4px 4px 0px #1a1a1a;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.card img,
+.card-img {
+  width: 110%;
+  height: 110%;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ZONE DE NOTIFICATION EN HAUT DU PLATEAU */
+#game-message {
+  font-family: 'Impact', sans-serif;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  background-color: #2ec4b6;
+  border: 3px solid #1a1a1a;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 3px 3px 0px #1a1a1a;
+  transition: opacity 0.2s ease, transform 0.2s ease, margin-bottom 0.2s ease;
+  opacity: 1;
+  transform: scale(1);
+  margin-bottom: 10px;
+  height: auto;
+}
+
+.game-message-hidden {
+  opacity: 0 !important;
+  transform: scale(0.95) !important;
+  margin-bottom: -45px !important;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/* ECRAN DE FIN DE PARTIE */
+#end-game-screen {
+  background: #ffffff;
+  border: 4px solid #1a1a1a;
+  border-radius: 20px;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 6px 6px 0px #1a1a1a;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 450px;
+  animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#end-title {
+  font-family: 'Impact', sans-serif;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin-top: 0;
+  color: #ff5964;
+  -webkit-text-stroke: 1px #1a1a1a;
+}
+
+#end-message {
+  font-family: 'Arial Black', sans-serif;
+  font-size: 1rem;
+  color: #1a1a1a;
+  margin-bottom: 30px;
+}
+
+.end-buttons-container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#btn-replay,
+#btn-restart {
+  padding: 12px 20px;
+  font-family: 'Impact', sans-serif;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  border: 3px solid #1a1a1a;
+  border-radius: 12px;
+  box-shadow: 4px 4px 0px #1a1a1a;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  flex: 1;
+}
+
+#btn-replay {
+  background: #2ec4b6;
+  color: white;
+}
+
+#btn-restart {
+  background: #fee440;
+  color: #1a1a1a;
+}
+
+#btn-replay:hover,
+#btn-restart:hover {
+  transform: translate(1px, 1px);
+  box-shadow: 3px 3px 0px #1a1a1a;
+}
+
+#btn-replay:active,
+#btn-restart:active {
+  transform: translate(4px, 4px);
+  box-shadow: none;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
