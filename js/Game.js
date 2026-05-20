@@ -288,6 +288,32 @@ export class Game {
         document.querySelector('#combo-value').textContent = `x${this.#combo}`;
         if (this.#combo >= 2) document.querySelector('.combo-zone').classList.add('combo-bump');
 
+        if (this.#combo ===  4) {
+          this.#stopTimer();
+          this.#isProcessing = true;
+
+          const gameBoard = document.querySelector('.game-board');
+          const paypalPopup = document.querySelector('#paypal-popup');
+          const resumeBtn = document.querySelector('#btn-resume-game');
+
+          gameBoard.classList.add('hidden');
+          paypalPopup.classList.remove('hidden');
+
+          resumeBtn.addEventListener('click', () => {
+            paypalPopup.classList.add('hidden');
+            gameBoard.classList.remove('hidden');
+
+            this.#isProcessing = false;
+            this.#runTimer();
+
+            if (this.#pairsFound === this.#difficulty) {
+              this.endGame("victory");
+            }
+          }, { once: true });
+
+          return;
+        }
+
         const msgElement = document.querySelector('#game-message');
         if (msgElement) {
           msgElement.textContent = "🔥 Bien joué ! Une paire !";

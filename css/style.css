@@ -414,6 +414,88 @@ button[type="submit"]:active {
   box-shadow: none;
 }
 
+/* Pop UP */
+#end-game-screen,
+.arcade-popup {
+  background: #ffffff;
+  border: 4px solid #1a1a1a;
+  border-radius: 20px;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 6px 6px 0px #1a1a1a;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 450px;
+  animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.paypal-header-container {
+  margin-bottom: 15px;
+}
+
+.paypal-arcade-icon {
+  display: inline-block;
+  background: #003087;
+  color: #ffffff;
+  font-family: 'Arial Black', sans-serif;
+  font-size: 1.5rem;
+  width: 45px;
+  height: 45px;
+  line-height: 41px;
+  border-radius: 50%;
+  border: 3px solid var(--dark-border);
+  box-shadow: 2px 2px 0px var(--dark-border);
+  font-style: italic;
+  font-weight: bold;
+}
+
+.arcade-popup .popup-title {
+  font-family: 'Impact', sans-serif;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin-top: 0;
+  color: var(--secondary);
+  -webkit-text-stroke: 1px #1a1a1a;
+}
+
+.arcade-popup .popup-message {
+  font-family: 'Arial Black', sans-serif;
+  font-size: 1rem;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+
+#paypal-email {
+  width: 100%;
+  padding: 12px;
+  border: 3px solid var(--dark-border);
+  border-radius: 12px;
+  box-sizing: border-box;
+  font-family: 'Arial Black', sans-serif;
+  font-size: 0.9rem;
+  text-align: center;
+  box-shadow: inset 2px 2px 0px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+#btn-resume-game {
+  font-family: 'Impact', sans-serif;
+  font-size: 1.2rem;
+  padding: 10px 25px;
+  border: 3px solid #1a1a1a;
+  border-radius: 12px;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px #1a1a1a;
+  transition: all 0.1s ease;
+}
+
+#btn-resume-game:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #1a1a1a;
+}
+
 @keyframes popIn {
   from { transform: scale(0.9); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
